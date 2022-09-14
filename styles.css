@@ -8,6 +8,10 @@
   padding: 0px 10px;
 }
 
+.mt {
+  margin-top: 10px;
+}
+
 body {
   background-image: url("./bg.png");
   background-size: cover;
@@ -155,15 +159,14 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  flex-direction: row;
 }
 
 .card {
-  width: 100%;
+  width: 32%;
   height: 100%;
   padding: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
   padding: 20px 30px;
   color: white;
   border-radius: 15px;
@@ -200,5 +203,6 @@ button {
 
   .card {
     flex-direction: column;
+    width: 100%;
   }
 }
