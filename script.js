@@ -24,7 +24,8 @@ const typeController = (e) => {
   const newLetter = e.key;
 
   // Handle backspace press
-  if (newLetter == "Backspace") {
+  if (newLetter === "Backspace") {
+    console.log("alsdfas");
     userText = userText.slice(0, userText.length - 1);
     return display.removeChild(display.lastChild);
   }
@@ -41,6 +42,7 @@ const typeController = (e) => {
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
+  console.log(newLetterCorrect);
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
@@ -67,7 +69,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken = Math.floor((finishTime - startTime) / 1000);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -91,7 +93,7 @@ const gameOver = () => {
   startTime = null;
   errorCount = 0;
   userText = "";
-  display.classList.add("inactive");
+  display.classList.add("inactive")
 };
 
 const closeModal = () => {
