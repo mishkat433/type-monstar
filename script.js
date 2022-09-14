@@ -5,7 +5,6 @@ const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
-
 // variables
 let userText = "";
 let errorCount = 0;
@@ -19,6 +18,7 @@ fetch("./texts.json")
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
   });
+
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
