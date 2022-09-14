@@ -38,3 +38,12 @@ function displayHistory() {
     histories.appendChild(newRow);
   });
 }
+
+// delete History
+document.getElementById("clearHistory").addEventListener("click", () => {
+  const deleteHistory = confirm("Do you want to delete history?")
+  if (deleteHistory) {
+    localStorage.removeItem("testHistory")
+    displayHistory()
+  }
+})

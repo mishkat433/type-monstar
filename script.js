@@ -5,6 +5,7 @@ const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
+
 // variables
 let userText = "";
 let errorCount = 0;
@@ -25,7 +26,6 @@ const typeController = (e) => {
 
   // Handle backspace press
   if (newLetter === "Backspace") {
-    console.log("alsdfas");
     userText = userText.slice(0, userText.length - 1);
     return display.removeChild(display.lastChild);
   }
@@ -42,12 +42,12 @@ const typeController = (e) => {
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
-  console.log(newLetterCorrect);
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount += 1;
   }
 
   // check if given question text is equal to user typed text
@@ -138,3 +138,4 @@ setInterval(() => {
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
+
